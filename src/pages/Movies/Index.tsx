@@ -48,9 +48,10 @@ class Movies extends Component<MoviesState> {
       await this.getNowPlaying(page + 1);
     }
     componentDidMount(): void {
-      this.getNowPlaying(this.state.page);
+      const { index } = this.state;
+      this.getNowPlaying(index);
     }
-  
+
     render() {
       const { data, loading, page } = this.state;
       return (
